@@ -41,11 +41,27 @@ app.get('/', function(req, res) {
   res.render('index');
 });
 
+
 app.get('/profile', isLoggedIn, function(req, res) {
   res.render('profile');
 });
 
+// Get /index - display main page
+app.get('/index', function(req, res) {
+  var moviesUrl = 'http://www.omdbapi.com/?i=tt3896198&apikey=df0475';
+  // Use request to call the API
+  request(moviesUrl, function(error, response, body) {
+    var movies = JSON.parse(body).results;
+    res.render('index', { movies: movies });
+  });
+});
+
 app.use('/auth', require('./controllers/auth'));
+app.use('/main', require('./controllers/main'));
+app.use('/genre', require('./controllers/genre'));
+app.use('/movie', require('./controllers/movie'));
+app.use('/own', require('./controllers/own'));
+app.use('/wishlist', require('./controllers/wishlist'));
 
 var server = app.listen(process.env.PORT || 3000);
 
