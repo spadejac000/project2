@@ -6,6 +6,7 @@ var session = require('express-session');
 var passport = require('./config/passportConfig');
 var isLoggedIn = require('./middleware/isLoggedIn');
 var flash = require('connect-flash');
+var request = require('request');
 
 var app = express();
 
@@ -37,9 +38,9 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.get('/', function(req, res) {
-  res.render('index');
-});
+// app.get('/', function(req, res) {
+//   res.render('index');
+// });
 
 
 app.get('/profile', isLoggedIn, function(req, res) {
@@ -47,11 +48,14 @@ app.get('/profile', isLoggedIn, function(req, res) {
 });
 
 // Get /index - display main page
-app.get('/index', function(req, res) {
-  var moviesUrl = 'http://www.omdbapi.com/?i=tt3896198&apikey=df0475';
+app.get('/', function(req, res) {
+  console.log('whatever')
+                   http://www.omdbapi.com/?apikey=[yourkey]&
+  var moviesUrl = 'http://www.omdbapi.com/?apikey=df0475&y=2018';
   // Use request to call the API
   request(moviesUrl, function(error, response, body) {
-    var movies = JSON.parse(body).results;
+    var movies = JSON.parse(body);
+    console.log(movies.Title);
     res.render('index', { movies: movies });
   });
 });
