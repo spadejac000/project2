@@ -1,15 +1,57 @@
-<h2>Home</h2>
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="left brand-logo">Logo</a>
+    <ul id="nav-mobile" class="right">
+      <li><a href="/auth/signup">Signup</a></li>
+      <li><a href="/auth/login">Login</a></li>
+      <li><a href="/auth/logout">Logout</a></li>
+      <li><a href="/profile">Profile</a></li>
+      <li><a href="/index">Main</a></li>
+    </ul>
+  </div>
+</nav>
 
-<a href="/auth/signup">Signup</a>
-<a href="/auth/login">Login</a>
-<a href="/auth/logout">Logout</a>
-<a href="/profile">Profile</a>
-<a href="/index">Main</a>
+<h2 class="text-center">Movies</h2>
+
 
 <div class="container">
-
-    <div class="">
-      <h5><%= movies.Title %></h5>
-      <img src="<%= movies.Poster %>">
-    </div>
+  <div class="well">
+    <label>Search Movies:</label>
+    <input type="text">
+    <button type="submit" name="button">Search</button>
+  </div>
+  <div class='row'>
+    <% for(i=0; i< 9; i++){ %>
+      <div class="col s4">
+        <img src="<%= movies[i].Poster %>" class="poster">
+        <h6 class="title"><%= movies[i].Title %></h6>
+      </div>
+    <% } %>
+  </div>
 </div>
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Footer Content</h5>
+        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Links</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    © 2014 Copyright Text
+    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    </div>
+  </div>
+</footer>
