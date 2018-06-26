@@ -5,7 +5,12 @@ var router = express.Router();
 
 // GET /own - get list of movies user owns
 router.get('/', function(req, res) {
-  res.render('own');
+  db.movieList.find({
+    where: {
+    
+    }
+  })
+  res.render('own', {});
 });
 
 module.exports = router;

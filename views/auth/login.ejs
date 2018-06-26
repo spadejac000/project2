@@ -1,13 +1,56 @@
-<form action="/auth/login" method="POST">
-  <div class="form-group">
-    <label for="authEmail">Email</label>
-    <input id="authEmail" class="form-control" type="email" name="email">
+<nav class="signup-navbar">
+  <div class="nav-wrapper">
+    <a href="#" class="left brand-logo">MovieSpot</a>
+    <ul id="nav-mobile" class="right">
+      <li><a href="/auth/signup">Signup</a></li>
+      <li><a href="/auth/login">Login</a></li>
+      <li><a href="/auth/logout">Logout</a></li>
+      <li><a href="/profile">Profile</a></li>
+      <li><a href="/own">Movies You Own</a></li>
+      <li><a href="/wishlist">Wishlist</a></li>
+    </ul>
   </div>
+</nav>
 
-  <div class="form-group">
-    <label for="authPassword">Password</label>
-    <input id="authPassword" class="form-control" type="password" name="password">
+<div class="container">
+  <form action="/auth/login" method="POST">
+    <div class="form-group">
+      <label for="authEmail">Email</label>
+      <input id="authEmail" class="form-control" type="email" name="email">
+    </div>
+
+    <div class="form-group">
+      <label for="authPassword">Password</label>
+      <input id="authPassword" class="form-control" type="password" name="password">
+    </div>
+
+    <input class="btn btn-primary" type="submit">
+  </form>
+</div>
+
+
+<footer class="page-footer signup-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Footer Content</h5>
+        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Links</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
-
-  <input class="btn btn-primary" type="submit">
-</form>
+  <div class="footer-copyright">
+    <div class="container">
+    © 2014 Copyright Text
+    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    </div>
+  </div>
+</footer>
