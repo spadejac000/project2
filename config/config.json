@@ -1,16 +1,16 @@
 {
   "development": {
-    "database": "movies",
+    "database": "movielist",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "database": "movies",
+    "database": "movielist",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "database": "movies",
+    "database": "movielist",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
