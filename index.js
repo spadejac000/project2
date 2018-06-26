@@ -78,6 +78,7 @@ app.use('/genre', require('./controllers/genre'));
 app.use('/movie', require('./controllers/movie'));
 app.use('/own', require('./controllers/own'));
 app.use('/wishlist', require('./controllers/wishlist'));
+app.use('/info', require('./controllers/info'));
 
 var server = app.listen(process.env.PORT || 3000);
 

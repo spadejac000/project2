@@ -1,6 +1,6 @@
 <div class="container">
   <% movies.forEach(function(movies) { %>
-    <a href="#">
+    <a href="info/<%= movies.imdbID %>">
       <h1><%= movies.Title %></h1>
       <img src="<%= movies.Poster %>">
     </a>
