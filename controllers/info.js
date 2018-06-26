@@ -11,15 +11,13 @@ router.get('/:id', function(req, res) {
   // Use request to call the API
   request(moviesUrl, function(error, response, body) {
     var movies = JSON.parse(body);
-  }).then(function(movies) {
-  db.comment.find({
-    where: { imdbId: req.params.id }
-    }).then(function(data) {
-      console.log(data)
-      res.render('info', {movies: movies, comment: data});
+    db.comment.findAll({
+      where: { imdbId: req.params.id }
+      }).then(function(data) {
+        res.render('info', {movies: movies, comments: data});
+      })
     })
   })
-});
 
 // POST /comment - create a new comment
 router.post('/:id/comment', isLoggedIn, function(req, res) {
@@ -28,7 +26,7 @@ router.post('/:id/comment', isLoggedIn, function(req, res) {
     imdbId: req.params.id,
     content: req.body.content
   }).then(function(post) {
-        res.redirect('/' + req.params.id);
+        res.redirect('/info/' + req.params.id);
       });
   });
 

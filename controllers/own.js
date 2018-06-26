@@ -5,7 +5,7 @@ var router = express.Router();
 
 // GET /own - get list of movies user owns
 router.get('/', function(req, res) {
-  res.send('Hello Own');
+  res.render('own');
 });
 
 module.exports = router;
