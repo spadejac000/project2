@@ -12,8 +12,10 @@ router.get('/:id', function(req, res) {
   request(moviesUrl, function(error, response, body) {
     var movies = JSON.parse(body);
     db.comment.findAll({
-      where: { imdbId: req.params.id }
+      where: { imdbId: req.params.id },
+      include: [db.user]
       }).then(function(data) {
+        console.log(data.user)
         res.render('info', {movies: movies, comments: data});
       })
     })

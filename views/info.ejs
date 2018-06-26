@@ -27,13 +27,12 @@
       </div>
       <% if(comments) { %>
       <% comments.forEach(function(comment) { %>
-           <p class="well"><strong><%= comment.name %></strong> <%= comment.content %></p>
+           <p class="well"><strong><%= comment.user.name %></strong></br>
+             <%= comment.content %></p>
       <% }); %>
       <% } %>
       <form method="post" action='/info/<%= movies.imdbID %>/comment' class="well">
-        <label>Name</label>
-          <input type="text" name="name">
-        <label>Comment</label>
+        <label>Write a review</label>
           <textarea type="text" name="content"></textarea>
         <button type="submit">Submit Comment</button>
       </form>
