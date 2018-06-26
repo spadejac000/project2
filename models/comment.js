@@ -3,7 +3,8 @@ module.exports = (sequelize, DataTypes) => {
   var comment = sequelize.define('comment', {
     content: DataTypes.TEXT,
     userId: DataTypes.INTEGER,
-    movieId: DataTypes.INTEGER
+    movieId: DataTypes.INTEGER,
+    imdbId: DataTypes.STRING
   }, {});
   comment.associate = function(models) {
     // associations can be defined here

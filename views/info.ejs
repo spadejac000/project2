@@ -1,4 +1,67 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="left brand-logo">Logo</a>
+    <ul id="nav-mobile" class="right">
+      <li><a href="/auth/signup">Signup</a></li>
+      <li><a href="/auth/login">Login</a></li>
+      <li><a href="/auth/logout">Logout</a></li>
+      <li><a href="/profile">Profile</a></li>
+      <li><a href="/index">Main</a></li>
+    </ul>
+  </div>
+</nav>
+
 <div class="container">
-      <h1><%= movies.Title %></h1>
-      <img src="<%= movies.Poster %>">
+      <h1 class="text-center"><%= movies.Title %></h1>
+      <img class="poster-column" src="<%= movies.Poster %>">
+      <div class="info-column">
+        <p><strong>Plot:</strong> <%= movies.Plot %></p>
+        <p><strong>Actors:</strong> <%= movies.Actors %></p>
+        <p><strong>Director:</strong> <%= movies.Director %></p>
+        <p><strong>Year:</strong> <%= movies.Year %></p>
+        <p><strong>Genre:</strong> <%= movies.Genre %></p>
+        <p><strong>Rated:</strong> <%= movies.Rated %></p>
+        <p><strong>Released:</strong> <%= movies.Released %></p>
+        <p><strong>Runtime:</strong> <%= movies.Runtime %></p>
+        <a class="waves-effect waves-light btn">Add To Own</a> <a class="waves-effect waves-light btn">Add To Wishlist</a>
+      </div>
 </div>
+
+<% if(comments) { %>
+<% comments.forEach(function(comment) { %>
+     <p class="well"><strong><%= comment.name %></strong> <%= comment.content %></p>
+<% }); %>
+<% } %>
+<form method="post" action='/info/<%= movies.imdbID %>/comment' class="well">
+  <label>Name</label>
+    <input type="text" name="name">
+  <label>Comment</label>
+    <textarea type="text" name="content"></textarea>
+  <button type="submit">Submit Comment</button>
+</form>
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Footer Content</h5>
+        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Links</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    © 2014 Copyright Text
+    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    </div>
+  </div>
+</footer>

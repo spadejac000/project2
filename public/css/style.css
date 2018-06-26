@@ -16,3 +16,15 @@ body {
 .col {
   height: 28em;
 }
+
+.poster-column {
+  margin-right: 5em;
+}
+
+.poster-column,
+.info-column {
+  display: inline-block;
+  width: 40%;
+  margin-bottom: 5em;
+  vertical-align: top;
+}
