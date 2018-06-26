@@ -10,12 +10,14 @@ router.get('/:id', function(req, res) {
   var moviesUrl = 'http://www.omdbapi.com/?apikey=df0475&i=' + req.params.id;
   // Use request to call the API
   request(moviesUrl, function(error, response, body) {
-    movies = JSON.parse(body);
-  });
+    var movies = JSON.parse(body);
+  }).then(function(movies) {
   db.comment.find({
     where: { imdbId: req.params.id }
     }).then(function(data) {
-      res.render('info', {movies: movies, comments: data});
+      console.log(data)
+      res.render('info', {movies: movies, comment: data});
+    })
   })
 });
 
@@ -26,7 +28,7 @@ router.post('/:id/comment', isLoggedIn, function(req, res) {
     imdbId: req.params.id,
     content: req.body.content
   }).then(function(post) {
-        res.redirect('#');
+        res.redirect('/' + req.params.id);
       });
   });
 
