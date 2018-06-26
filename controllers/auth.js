@@ -24,6 +24,14 @@ router.post('/signup', function(req, res) {
     }
   }).spread(function(user, created) {
     if (created) {
+      db.list.create({
+        name: "own",
+        userId: user.id
+      });
+      db.list.create({
+        name: "wishlist",
+        userId: user.id
+      });
       //No record was found, so we created one
       passport.authenticate('local', {
         successRedirect: '/',
