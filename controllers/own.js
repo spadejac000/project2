@@ -3,14 +3,20 @@ var db = require('../models');
 var passport = require('../config/passportConfig');
 var router = express.Router();
 
-// GET /own - get list of movies user owns
+// GET /own - return a page with owned movies
 router.get('/', function(req, res) {
-  db.movieList.find({
-    where: {
-    
-    }
+  db.list.findAll().then(function(data) {
+    res.render('own', {ownlist: data})
   })
-  res.render('own', {});
+});
+
+// POST /own - receive the name of a movie and add it to the database
+router.post('/', function(req, res) {
+  db.list.create({
+    name: req.body.name,
+  }).then(function(data) {
+    res.redirect('own');
+  });
 });
 
 module.exports = router;

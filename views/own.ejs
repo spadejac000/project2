@@ -1,6 +1,6 @@
 <nav>
   <div class="nav-wrapper">
-    <a href="#" class="left brand-logo">Logo</a>
+    <a href="#" class="left brand-logo">MovieSpot</a>
     <ul id="nav-mobile" class="right">
       <li><a href="/auth/signup">Signup</a></li>
       <li><a href="/auth/login">Login</a></li>
@@ -8,6 +8,7 @@
       <li><a href="/profile">Profile</a></li>
       <li><a href="/own">Movies You Own</a></li>
       <li><a href="/wishlist">Wishlist</a></li>
+      <li><a href="/index">Home</a></li>
     </ul>
   </div>
 </nav>
@@ -15,7 +16,7 @@
 <h2 class="text-center">Movies You Own</h2>
 
 <ul>
-  <% movielist.forEach(function(movie) { %>
+  <% ownlist.forEach(function(movie) { %>
       <li id="favoriteMovie"><a href="/movie/<%= movie.name %>"><%= movie.name %></a><button type="button" name="button" class="deleteButton" href="/movie/<%= movie.id %>">DELETE</button></li>
   <% }); %>
 </ul>
