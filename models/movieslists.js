@@ -1,12 +1,11 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var movieList = sequelize.define('movieList', {
+  var moviesLists = sequelize.define('moviesLists', {
     movieId: DataTypes.INTEGER,
     listId: DataTypes.INTEGER
   }, {});
-  movieList.associate = function(models) {
+  moviesLists.associate = function(models) {
     // associations can be defined here
-    models.movieList.belongsTo(models.user)
   };
-  return movieList;
+  return moviesLists;
 };

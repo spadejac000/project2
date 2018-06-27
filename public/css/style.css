@@ -36,3 +36,8 @@ body {
 .signup-footer {
   margin-top: 5em;
 }
+
+.own-btn,
+.wishlist-btn {
+  display: inline-block;
+}
