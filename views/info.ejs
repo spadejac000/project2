@@ -1,4 +1,4 @@
-<nav class="brown darken-3">
+<nav class=" grey darken-3">
   <div class="nav-wrapper">
     <a href="#" class="left brand-logo">MovieSpot</a>
     <ul id="nav-mobile" class="right">
@@ -32,24 +32,25 @@
             <input class="waves-effect waves-light btn" type="submit" value="Add To Wishlist">
           </form>
       </div>
+      <h1 class="text-center">Write A Review</h1>
       <% if(comments) { %>
       <% comments.forEach(function(comment) { %>
-           <p class="well"><strong><%= comment.user.name %></strong></br>
+           <p class="well grey darken-3 name"><strong class="name"><%= comment.user.name %></strong></br>
              <%= comment.content %></p>
       <% }); %>
       <% } %>
-      <form method="post" action='/info/<%= movies.imdbID %>/comment' class="well">
-        <label>Write a review</label>
-          <textarea type="text" name="content"></textarea>
-        <button type="submit">Submit Comment</button>
+      <form method="post" action='/info/<%= movies.imdbID %>/comment' class="well grey darken-3">
+        <label class="review">Review</label>
+          <textarea class="white" type="text" name="content"></textarea>
+        <button class="waves-effect waves-light btn" type="submit">Submit Comment</button>
       </form>
 </div>
 
-<footer class="page-footer brown darken-3">
+<footer class="page-footer grey darken-3">
   <div class="footer-copyright">
     <div class="container">
-    © 2014 Copyright Text
-    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    © 2018
+    <a class="grey-text text-lighten-4 right" href="#!">Home</a>
     </div>
   </div>
 </footer>

@@ -1,4 +1,4 @@
-<nav class="brown darken-3">
+<nav class=" grey darken-3">
   <div class="nav-wrapper">
     <a href="#" class="left brand-logo">MovieSpot</a>
     <ul id="nav-mobile" class="right">
@@ -12,7 +12,7 @@
   </div>
 </nav>
 
-<div class="container">
+<div class="container text-center movie">
   <% movies.forEach(function(movies) { %>
     <a href="info/<%= movies.imdbID %>">
       <h1><%= movies.Title %></h1>
@@ -21,11 +21,11 @@
   <% }); %>
 </div>
 
-<footer class="page-footer brown darken-3 movie-footer">
+<footer class="page-footer grey darken-3 movie-footer">
   <div class="footer-copyright">
     <div class="container">
-    © 2014 Copyright Text
-    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    © 2018
+    <a class="grey-text text-lighten-4 right" href="#!">Home</a>
     </div>
   </div>
 </footer>

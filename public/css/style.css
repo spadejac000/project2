@@ -66,3 +66,49 @@ footer {
 .movie-footer {
   margin-top: 5em;
 }
+
+.search {
+  color: white;
+  font-size: 2em;
+}
+
+.search-input {
+  background-color: white;
+  color: white;
+}
+
+.search,
+.search-input,
+.search-btn {
+  display: inline-block;
+}
+
+.movie a {
+  text-decoration: none;
+  color: black;
+}
+
+.movie a:hover {
+  color: grey;
+}
+
+.name {
+  color: white;
+}
+
+.review {
+  color: white;
+}
+
+.brand-logo {
+  font-family: 'Shrikhand', cursive;
+  text-decoration: none;
+}
+
+li {
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+h2 {
+  font-family: 'Monofett', cursive;
+}
