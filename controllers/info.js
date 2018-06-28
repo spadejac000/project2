@@ -32,4 +32,6 @@ router.post('/:id/comment', isLoggedIn, function(req, res) {
       });
   });
 
+// PUT /comment - edit a comment
+
 module.exports = router;
