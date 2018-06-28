@@ -18,7 +18,7 @@
   <ul class="container">
     <% ownlist.forEach(function(movie) { %>
         <% console.log(movie.name) %>
-        <li"><a href="/movie/<%= movie.name %>"><%= movie.name %></a><button type="button" name="button" class="deleteButton" href="/wishlist/<%= movie.id %>/<%= list.id %>">DELETE</button></li>
+        <li><a class="wishlist-item" href="/movie/<%= movie.name %>"><%= movie.name %></a><button class="waves-effect waves-light btn delete" type="button" name="button" class="deleteButton" href="/wishlist/<%= movie.id %>/<%= list.id %>">DELETE</button></li>
     <% }); %>
   </ul>
 </div>

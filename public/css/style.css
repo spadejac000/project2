@@ -112,3 +112,14 @@ li {
 h2 {
   font-family: 'Monofett', cursive;
 }
+
+.wishlist-item {
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: black;
+  margin-right: 2em;
+  text-align: center;
+}
+
+.delete {
+  margin-bottom: .5em;
+}
