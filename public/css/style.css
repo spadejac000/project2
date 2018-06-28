@@ -1,5 +1,5 @@
 body {
-  background-image: url('images/cork-wallet.png');
+  background-image: url('cork-wallet.png');
   background-size: cover;
 }
 
@@ -61,4 +61,8 @@ body {
 
 footer {
   flex-shrink: 0;
+}
+
+.movie-footer {
+  margin-top: 5em;
 }

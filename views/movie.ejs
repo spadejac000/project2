@@ -1,3 +1,17 @@
+<nav class="brown darken-3">
+  <div class="nav-wrapper">
+    <a href="#" class="left brand-logo">MovieSpot</a>
+    <ul id="nav-mobile" class="right">
+      <li><a href="/auth/signup">Signup</a></li>
+      <li><a href="/auth/login">Login</a></li>
+      <li><a href="/auth/logout">Logout</a></li>
+      <li><a href="/own">Movies You Own</a></li>
+      <li><a href="/wishlist">Wishlist</a></li>
+      <li><a href="/">Home</a></li>
+    </ul>
+  </div>
+</nav>
+
 <div class="container">
   <% movies.forEach(function(movies) { %>
     <a href="info/<%= movies.imdbID %>">
@@ -6,3 +20,12 @@
     </a>
   <% }); %>
 </div>
+
+<footer class="page-footer brown darken-3 movie-footer">
+  <div class="footer-copyright">
+    <div class="container">
+    © 2014 Copyright Text
+    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    </div>
+  </div>
+</footer>

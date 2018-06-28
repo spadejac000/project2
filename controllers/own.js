@@ -10,7 +10,7 @@ router.get('/', isLoggedIn, function(req, res) {
     where: {name: 'own', userId: req.user.id}
   }).then(function(list) {
     list.getMovies().then(function(data) {
-      res.render('own', {ownlist: data})
+      res.render('own', {ownlist: data, list: list})
     })
 
   })
@@ -21,7 +21,6 @@ router.post('/:movie', isLoggedIn, function(req, res) {
     db.list.find({
       where: {name: 'own', userId: req.user.id}
     }).then(function(list) {
-      console.log(list + " hi");
       db.movie.findOrCreate({
         where: {name: req.params.movie}
       }).spread(function(movie, created) {
@@ -30,6 +29,16 @@ router.post('/:movie', isLoggedIn, function(req, res) {
       });
     });
   });
+});
+
+// DELETE /movie - delete movie from own list
+router.delete('/:id/:list', function(req, res) {
+  console.log('oooga booga')
+  db.moviesLists.destroy({
+    where: {movieId: req.params.id, listId: req.params.list}
+  }).then(function(data) {
+    res.sendStatus(200);
+  })
 });
 
 module.exports = router;

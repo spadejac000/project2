@@ -1,5 +1,5 @@
-<nav>
-  <div class="nav-wrapper brown darken-3">
+<nav class="brown darken-3">
+  <div class="nav-wrapper">
     <a href="#" class="left brand-logo">MovieSpot</a>
     <ul id="nav-mobile" class="right">
       <li><a href="/auth/signup">Signup</a></li>
@@ -13,12 +13,12 @@
 </nav>
 
 <div class="content">
-  <h2 class="text-center">Movies You Own</h2>
+  <h2 class="text-center">Movies You Want</h2>
 
   <ul class="container">
     <% ownlist.forEach(function(movie) { %>
         <% console.log(movie.name) %>
-        <li id="ownedMovie"><a href="/movie/<%= movie.name %>"><%= movie.name %></a><button type="button" name="button" class="deleteButton" href="/own/<%= movie.id %>/<%= list.id %>">DELETE</button></li>
+        <li id="ownedMovie"><a href="/movie/<%= movie.name %>"><%= movie.name %></a><button type="button" name="button" class="deleteButton" href="/movie/<%= movie.id %>">DELETE</button></li>
     <% }); %>
   </ul>
 </div>
