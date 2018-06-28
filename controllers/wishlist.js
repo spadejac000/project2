@@ -10,7 +10,7 @@ router.get('/', isLoggedIn, function(req, res) {
     where: {name: 'wishlist', userId: req.user.id}
   }).then(function(list) {
     list.getMovies().then(function(data) {
-      res.render('wishlist', {ownlist: data})
+      res.render('wishlist', {ownlist: data, list: list})
     })
 
   })
