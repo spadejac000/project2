@@ -11,6 +11,7 @@ body {
 .title {
   width: 80%;
   text-align: center;
+
 }
 
 .col {
@@ -113,13 +114,35 @@ h2 {
   font-family: 'Monofett', cursive;
 }
 
-.wishlist-item {
+.wishlist-item,
+.own-item,
+.title {
   font-family: 'Montserrat Alternates', sans-serif;
   color: black;
   margin-right: 2em;
   text-align: center;
+  background-color: lightgrey;
+  border: 1px solid black;
+  padding-right: 1em;
+  padding-left: 1em;
+  border-radius: 100px;
 }
 
-.delete {
+.item {
+  text-align: center;
+}
+
+.deleteButton {
   margin-bottom: .5em;
+}
+
+h1 {
+  font-family: 'Monofett', cursive;
+}
+
+.edit {
+  width: 4em;
+  padding-right: 3px;
+  padding-left:3px;
+  margin-top: 1em;
 }

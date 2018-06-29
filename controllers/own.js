@@ -38,7 +38,7 @@ router.delete('/:id/:list', function(req, res) {
     where: {movieId: req.params.id, listId: req.params.list}
   }).then(function(data) {
     res.sendStatus(200);
-  })
+  });
 });
 
 module.exports = router;

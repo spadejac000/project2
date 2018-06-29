@@ -1,6 +1,6 @@
 <nav class=" grey darken-3">
   <div class="nav-wrapper">
-    <a href="#" class="left brand-logo">MovieSpot</a>
+    <a href="/" class="left brand-logo">MovieSpot</a>
     <ul id="nav-mobile" class="right">
       <li><a href="/auth/signup">Signup</a></li>
       <li><a href="/auth/login">Login</a></li>
@@ -18,7 +18,7 @@
   <ul class="container">
     <% ownlist.forEach(function(movie) { %>
         <% console.log(movie.name) %>
-        <li><a class="wishlist-item" href="/movie/<%= movie.name %>"><%= movie.name %></a><button class="waves-effect waves-light btn delete" type="button" name="button" class="deleteButton" href="/wishlist/<%= movie.id %>/<%= list.id %>">DELETE</button></li>
+        <li class="item"><a class="wishlist-item" href="/movie/<%= movie.name %>"><%= movie.name %></a><button type="button" name="button" class="deleteButton waves-effect waves-light btn" href="/wishlist/<%= movie.id %>/<%= list.id %>">DELETE</button></li>
     <% }); %>
   </ul>
 </div>

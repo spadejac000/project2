@@ -1,0 +1,19 @@
+<h1>Edit Review: <%= comment.user.name %></h1>
+
+<form class="edit-form" action="/comment/<%= comment.id %>" method="post" role="form">
+  <div class="form-group">
+    <label for="title" class="hidden"></label>
+    <input type="text" name="title" value="<%= comment.title %>">
+  </div>
+  <!-- <div class="">
+    <label for=""></label>
+    <input type="text" name="" value="<%= article.author %>">
+  </div> -->
+
+  <div class="">
+    <label for=""></label>
+    <textarea name="body" rows="8" cols="80" placeholder=""><%= comment.body %></textarea>
+  </div>
+
+  <button type="submit" name="button">Submit</button>
+</form>

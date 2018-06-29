@@ -1,6 +1,6 @@
 <nav>
   <div class="nav-wrapper grey darken-3">
-    <a href="#" class="left brand-logo">MovieSpot</a>
+    <a href="/" class="left brand-logo">MovieSpot</a>
     <ul id="nav-mobile" class="right">
       <li><a href="/auth/signup">Signup</a></li>
       <li><a href="/auth/login">Login</a></li>
@@ -18,7 +18,7 @@
   <ul class="container">
     <% ownlist.forEach(function(movie) { %>
         <% console.log(movie.name) %>
-        <li><a href="/movie/<%= movie.name %>"><%= movie.name %></a><button type="button" name="button" class="deleteButton" href="/own/<%= movie.id %>/<%= list.id %>">DELETE</button></li>
+        <li class="item"><a class="own-item" href="/info/<%= movie.name %>"><%= movie.name %></a><button type="button" name="button" class="deleteButton waves-effect waves-light btn" href="/own/<%= movie.id %>/<%= list.id %>">DELETE</button></li>
     <% }); %>
   </ul>
 </div>
@@ -26,7 +26,7 @@
 <footer class="page-footer own-footer grey darken-3">
   <div class="footer-copyright">
     <div class="container">
-    © 2018
+    © 2018 MovieSpot
     <a class="grey-text text-lighten-4 right" href="#!">Home</a>
     </div>
   </div>

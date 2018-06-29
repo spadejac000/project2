@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  console.log('done')
   $('button.deleteButton').click(function(e) {
     e.preventDefault()
     var url = $(this).attr('href');
@@ -7,7 +6,6 @@ $(document).ready(function() {
       method: 'DELETE',
       url: url
     }).done(function(data) {
-      console.log('done')
       window.location = '/own';
     })
   })

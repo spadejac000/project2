@@ -11,11 +11,11 @@ router.get('/:id', function(req, res) {
   // Use request to call the API
   request(moviesUrl, function(error, response, body) {
     var movies = JSON.parse(body);
+    console.log(movies)
     db.comment.findAll({
       where: { imdbId: req.params.id },
       include: [db.user]
       }).then(function(data) {
-        console.log(data.user)
         res.render('info', {movies: movies, comments: data});
       });
     });
