@@ -2,7 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   var movie = sequelize.define('movie', {
     name: DataTypes.STRING,
-    genre: DataTypes.STRING
+    imdbId: DataTypes.STRING
   }, {});
   movie.associate = function(models) {
     // associations can be defined here

@@ -7,6 +7,7 @@ var passport = require('./config/passportConfig');
 var isLoggedIn = require('./middleware/isLoggedIn');
 var flash = require('connect-flash');
 var request = require('request');
+var db = require('./models');
 
 var app = express();
 
@@ -70,6 +71,28 @@ app.get('/', function(req, res) {
       {Title: 'Monty Python and the Holy Grail', Poster: 'https://ia.media-imdb.com/images/M/MV5BN2IyNTE4YzUtZWU0Mi00MGIwLTgyMmQtMzQ4YzQxYWNlYWE2XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg'},
       {Title: 'Serendipity', Poster: 'https://ia.media-imdb.com/images/M/MV5BMTkzMjEzOTQ3Nl5BMl5BanBnXkFtZTYwMjI1NzU5._V1_SX300.jpg'}]
     res.render('index', { movies: movies});
+});
+
+//GET /edit - get page to edit review post
+app.get('/:id/comment/edit', function(req, res) {
+  db.comment.find({
+    where: {id: req.params.id},
+    include: [db.movie]
+  }).then(function(data) {
+    res.render('edit', {comment: data})
+  })
+});
+
+
+// PUT /comment - edit a comment
+app.put('/:id/comment', function(req, res) {
+  db.comment.update({
+    content: req.body.content
+  }, {
+    where: {id: req.params.id}
+  }).then(function(post) {
+    res.sendStatus(200);
+  });
 });
 
 app.use('/auth', require('./controllers/auth'));

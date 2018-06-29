@@ -32,13 +32,4 @@ router.post('/:id/comment', isLoggedIn, function(req, res) {
       });
   });
 
-// PUT /comment - edit a comment
-router.put('/:id/comment', isLoggedIn, function(req, res) {
-  db.comment.update({
-    content: req.body.content
-  }).then(function(post) {
-    res.redirect('/info/' + req.params.id);
-  });
-});
-
 module.exports = router;

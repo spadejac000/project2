@@ -17,12 +17,15 @@ router.get('/', isLoggedIn, function(req, res) {
 });
 
 // POST /own - receive the name of a movie and add it to the database
-router.post('/:movie', isLoggedIn, function(req, res) {
+router.post('/:movie/:imdbId', isLoggedIn, function(req, res) {
     db.list.find({
       where: {name: 'own', userId: req.user.id}
     }).then(function(list) {
       db.movie.findOrCreate({
-        where: {name: req.params.movie}
+        where: {
+          name: req.params.movie,
+          imdbId: req.params.imdbId
+        }
       }).spread(function(movie, created) {
       list.addMovie(movie).then(function(data) {
         res.redirect('/own');

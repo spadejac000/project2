@@ -10,4 +10,21 @@ $(document).ready(function() {
     })
   })
 
+  $('.edit').on('submit', function(e){
+  e.preventDefault();
+  // added a variable for movie id
+  var movieName = $('#movie').val();
+  console.log($(this));
+  var updatedInfo = $(this).serialize();
+  console.log(updatedInfo);
+  var url = $(this).attr('action');
+  $.ajax({
+    method: 'PUT',
+    url: url,
+    data: updatedInfo
+  }).done(function(data) {
+    // added movie id to route after /info/
+    window.location = '/info/' + movieName;
+  })
+})
 });

@@ -25,7 +25,7 @@
         <p><strong>Rated:</strong> <%= movies.Rated %></p>
         <p><strong>Released:</strong> <%= movies.Released %></p>
         <p><strong>Runtime:</strong> <%= movies.Runtime %></p>
-          <form class="own-btn" method="POST" action="/own/<%= movies.Title %>">
+          <form class="own-btn" method="POST" action="/own/<%= movies.Title %>/<%= movies.imdbID %>">
             <input class="waves-effect waves-light btn" type="submit" value="Add to own">
           </form>
           <form class="wishlist-btn" method="POST" action="/wishlist/<%= movies.Title %>">
@@ -37,8 +37,8 @@
       <% comments.forEach(function(comment) { %>
            <p class="well grey darken-3 name"><strong class="name"><%= comment.user.name %></strong></br>
              <%= comment.content %>
-             <% if (currentUser.id === comment.userId) { %></br>
-             <input class="waves-effect waves-light btn-small edit"  href="/info/<%= comment.id %>/edit" type="submit" value="Edit"></input>
+             <% if (currentUser && currentUser.id === comment.userId) { %></br>
+             <a class="waves-effect waves-light btn-small edit"  href="/<%= comment.id %>/comment/edit" type="submit">Edit</a>
              <% } %>
            </p>
       <% }); %>

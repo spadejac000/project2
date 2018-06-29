@@ -1,19 +1,35 @@
-<h1>Edit Review: <%= comment.user.name %></h1>
-
-<form class="edit-form" action="/comment/<%= comment.id %>" method="post" role="form">
-  <div class="form-group">
-    <label for="title" class="hidden"></label>
-    <input type="text" name="title" value="<%= comment.title %>">
+<nav class=" grey darken-3">
+  <div class="nav-wrapper">
+    <a href="/" class="left brand-logo">MovieSpot</a>
+    <ul id="nav-mobile" class="right">
+      <li><a href="/auth/signup">Signup</a></li>
+      <li><a href="/auth/login">Login</a></li>
+      <li><a href="/auth/logout">Logout</a></li>
+      <li><a href="/profile">Profile</a></li>
+      <li><a href="/own">Movies You Own</a></li>
+      <li><a href="/wishlist">Wishlist</a></li>
+      <li><a href="/">Home</a></li>
+    </ul>
   </div>
-  <!-- <div class="">
-    <label for=""></label>
-    <input type="text" name="" value="<%= article.author %>">
-  </div> -->
+</nav>
 
-  <div class="">
-    <label for=""></label>
-    <textarea name="body" rows="8" cols="80" placeholder=""><%= comment.body %></textarea>
+<div class="container content">
+  <h1 class="text-center">Edit Review: <%= comment.imdb %></h1>
+
+  <form class="edit" action="/<%= comment.id %>/comment" method="post" role="form">
+      <label for=""></label>
+      <textarea class="edit-content" name="content" id="content" rows="8" cols="80"><%= comment.body %></textarea>
+
+    <input type="hidden" name="movie" id="movie" value="<%= comment.imdbId %>">
+    <button type="submit" name="button" class="waves-effect waves-light btn">Submit</button>
+  </form>
+</div>
+
+<footer class="page-footer grey darken-3">
+  <div class="footer-copyright">
+    <div class="container">
+    © 2018
+    <a class="grey-text text-lighten-4 right" href="#!">Home</a>
+    </div>
   </div>
-
-  <button type="submit" name="button">Submit</button>
-</form>
+</footer>
