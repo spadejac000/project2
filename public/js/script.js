@@ -28,3 +28,13 @@ $(document).ready(function() {
   })
 })
 });
+
+// hide sign up and login when logged in
+// sticky footer in rendered movies
+// make it so you can't crash site when looking up a wrong movie
+// make route for wishlist movies
+// make the movies on the main page have links
+// fix edit review section
+// make home links at bottom of page work
+// create readme.md
+// make responsive
