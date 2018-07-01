@@ -151,4 +151,6 @@ h1 {
 .edit-content {
   color: black;
   border-radius: 5px;
+  width: 55em;
+  height: 10em;
 }

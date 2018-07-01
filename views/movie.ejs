@@ -12,7 +12,7 @@
   </div>
 </nav>
 
-<div class="container text-center movie">
+<div class="container text-center movie content">
   <% movies.forEach(function(movies) { %>
     <% if (movies.Poster !== 'N/A' && movies.Runtime !== 'N/A') { %>
     <a href="info/<%= movies.imdbID %>">
@@ -27,7 +27,7 @@
   <div class="footer-copyright">
     <div class="container">
     © 2018
-    <a class="grey-text text-lighten-4 right" href="#!">Home</a>
+    <a class="grey-text text-lighten-4 right" href="/">Home</a>
     </div>
   </div>
 </footer>

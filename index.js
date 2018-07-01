@@ -40,26 +40,14 @@ app.use(function(req, res, next) {
   next();
 });
 
-// app.get('/', function(req, res) {
-//   res.render('index');
-// });
-
 
 app.get('/profile', isLoggedIn, function(req, res) {
   res.render('profile');
 });
 
-// displaying movies for main page
-
 // Get /index - display main page
 app.get('/', function(req, res) {
   console.log('whatever')
-  // var moviesUrl = 'http://www.omdbapi.com/?apikey=df0475&t=star+wars';
-  // Use request to call the API
-  // request(moviesUrl, function(error, response, body) {
-    // var movies = JSON.parse(body);
-    // console.log(movies.Search.length);
-    // res.send(movies);
     var movies = [
       {Title: 'Star Wars: Episode IV - A New Hope', Poster: 'https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg'},
       {Title: 'Ice Age', Poster: 'https://ia.media-imdb.com/images/M/MV5BMmYxZWY2NzgtYzJjZC00MDFmLTgxZTctMjRiYjdjY2FhODg3XkEyXkFqcGdeQXVyNjk1Njg5NTA@._V1_SX300.jpg'},

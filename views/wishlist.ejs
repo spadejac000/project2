@@ -18,7 +18,7 @@
   <ul class="container">
     <% ownlist.forEach(function(movie) { %>
         <% console.log(movie.name) %>
-        <li class="item"><a class="wishlist-item" href="/movie/<%= movie.name %>"><%= movie.name %></a><button type="button" name="button" class="deleteButton waves-effect waves-light btn" href="/wishlist/<%= movie.id %>/<%= list.id %>">DELETE</button></li>
+        <li class="item"><a class="wishlist-item"  href="/info/<%= movie.imdbId %>"><%= movie.name %></a><button type="button" name="button" class="deleteButton waves-effect waves-light btn" href="/wishlist/<%= movie.id %>/<%= list.id %>">DELETE</button></li>
     <% }); %>
   </ul>
 </div>
@@ -27,7 +27,7 @@
   <div class="footer-copyright">
     <div class="container">
     © 2018
-    <a class="grey-text text-lighten-4 right" href="#!">Home</a>
+    <a class="grey-text text-lighten-4 right" href="/">Home</a>
     </div>
   </div>
 </footer>
