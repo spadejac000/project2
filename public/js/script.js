@@ -28,6 +28,3 @@ $(document).ready(function() {
   });
 });
 });
-
-// create readme.md and map routes
-// deploy it
