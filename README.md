@@ -28,6 +28,10 @@ Getting reviews was a difficult challenge, but I got it working in the end:
 
 <img width="1281" alt="screen shot 2018-06-26 at 4 34 38 pm" src="https://user-images.githubusercontent.com/34433863/42144755-bbd6f99a-7d71-11e8-8b6c-4af95cc959ce.png">
 
+Here is a log of all my RESTful routes:
+
+<img width="501" alt="screen shot 2018-07-01 at 9 29 36 pm" src="https://user-images.githubusercontent.com/34433863/42145389-0fd6a582-7d76-11e8-843f-a6966b79e3b4.png">
+
 ## Issues during development:
 
 I had major trouble trying to request API info the way I wanted it to. My original goal was to have the front page displaying movies according to genre, however, the OMDB API did not provide a way to do that. In the end I just hard coded 9 movies on to the front page of the website. In addition, displaying reviews on my info page was a bit of a challenge as well but eventually I managed to get it working.
