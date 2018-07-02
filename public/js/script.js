@@ -29,11 +29,5 @@ $(document).ready(function() {
 });
 });
 
-// hide sign up and login when logged in
-// make it so you can't crash site when looking up a wrong movie
-// make route for wishlist movies
-// make the movies on the main page have links
 // create readme.md and map routes
-// make responsive
-// clean up code
 // deploy it

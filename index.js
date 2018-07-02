@@ -84,8 +84,6 @@ app.put('/:id/comment', function(req, res) {
 });
 
 app.use('/auth', require('./controllers/auth'));
-app.use('/main', require('./controllers/main'));
-app.use('/genre', require('./controllers/genre'));
 app.use('/movie', require('./controllers/movie'));
 app.use('/own', require('./controllers/own'));
 app.use('/wishlist', require('./controllers/wishlist'));
