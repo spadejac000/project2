@@ -22,7 +22,9 @@ router.post('/:movie', isLoggedIn, function(req, res) {
       where: {name: 'wishlist', userId: req.user.id}
     }).then(function(list) {
       db.movie.findOrCreate({
-        where: {name: req.params.movie}
+        where: {name: req.params.movie,
+        imdbId: req.params.imdbId
+      },
       }).spread(function(movie, created) {
       list.addMovie(movie).then(function(data) {
         res.redirect('/wishlist');
